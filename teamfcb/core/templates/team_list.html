@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 style="color:black; size:100%">Team FBC</h1>
+  <h2 style="color:black; size:100%">Teams</h2>
+    <thead>
+    {% for value in teams %}
+        <table>
+        <tr>
+            <td>Team Name {{ value.team_name }}</td>
+            <td>Team Members {{ value.team_members }}</td>
+            <td>Team Coach {{ value.coach }}</td>
+            <td>Team Managers {{ value.managers }}</td>
+        </tr>
+            </table>
+        {% endfor %}
+    </thead>
+<form method="post">
+    {% csrf_token %}
+    <a href="/core/teams" class="btn btn-primary" type="submit">Back to register</a>
+    <a href="/core/start_match" class="btn btn-primary" type="submit">Start Match</a>
+
+</form>
+{% endblock %}
