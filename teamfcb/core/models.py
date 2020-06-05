@@ -18,8 +18,8 @@ class MatchSchedule(models.Model):
     """Models for schedule team matches"""
 
     match_teams = models.CharField(max_length=32)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.CharField(max_length=24)
+    end_time = models.CharField(max_length=24)
     venue = models.CharField(max_length=16)
 
     def __str__(self):

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 style="color:black; size:100%">Team FBC</h1>
+  <h2 style="color:black; size:100%">Create Match</h2>
+  <form method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Create match">
+      <p style="color:black; size:100%">Please enter Teams name by separating a comma</p>
+  </form>
+{% endblock %}

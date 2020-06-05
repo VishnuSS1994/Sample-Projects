@@ -42,4 +42,18 @@ class TeamList(ListView):
 class StartMatch(generic.TemplateView):
 
     template_name = 'start_match.html'
-    success_url = '/core/logout/'
+    success_url = '/core/match_create/'
+
+
+class MatchCreate(CreateView):
+    model = MatchSchedule
+    fields = ['match_teams', 'start_time', 'end_time', 'venue']
+    template_name = 'match.html'
+    success_url = '/core/matchcreated_list/'
+
+
+class MatchCreated(ListView):
+    model = MatchSchedule
+    template_name = 'matchcreated_list.html'
+    context_object_name = 'match'
+    allow_empty = True

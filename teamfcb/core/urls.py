@@ -14,6 +14,10 @@ urlpatterns = [
 
     url(r'^start_match/$', views.StartMatch.as_view(), name='start_match'),
 
+    url(r'^match_create/$', views.MatchCreate.as_view(), name='match_create'),
+
+    url(r'^matchcreated_list/$', views.MatchCreated.as_view(), name='match_created'),
+
     url(r'^logout/$', views.Logout.as_view(), name='logout'),
 
 ]
